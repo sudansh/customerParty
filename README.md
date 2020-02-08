@@ -16,6 +16,16 @@ https://github.com/sudansh/party.git
 - Transfer the apk to you device and open the file using any file manager.
 - It would ask you to install the app. Click install.
 
+Click below for the recording of app
+[View the Demo Video](https://imgur.com/5QVXvSR)
+
+## App Flow
+- Open the app `Customer Party`
+- Initially it shows an empty screen with a button to fetch the customers list ![](resources/1.png)
+- Click on the button to make the api call. 
+- A progress bar is shown while the network requests is going on
+- Once the results are fetch they are shown as a list![](resources/2.png)
+- In case the network call fails, a toast is shown to notify the user![](resources/3.png)
 
 ## About the app structure
 - MVVM Architecture with Uncle bob clean architecture
