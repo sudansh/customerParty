@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<data>
+
+		<variable
+			name="customer"
+			type="com.sudansh.party.data.local.entities.Customer" />
+	</data>
+
+	<com.google.android.material.card.MaterialCardView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="8dp"
+		app:cardBackgroundColor="@color/card_background"
+		app:cardCornerRadius="8dp">
+
+		<LinearLayout
+			android:id="@+id/container"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:padding="12dp">
+
+			<TextView
+				android:id="@+id/customerUserId"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="0.4"
+				android:text='@{""+customer.userId}'
+				android:textColor="@color/white"
+				tools:text="@tools:sample/lorem" />
+
+			<TextView
+				android:id="@+id/customerName"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:text="@{customer.name}"
+				android:textColor="@color/white"
+				tools:text="@tools:sample/lorem" />
+		</LinearLayout>
+
+	</com.google.android.material.card.MaterialCardView>
+</layout>
+

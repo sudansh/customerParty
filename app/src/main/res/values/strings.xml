@@ -1,0 +1,4 @@
+<resources>
+	<string name="app_name">Customer Party</string>
+	<string name="fetch_customer">Fetch Customers</string>
+</resources>

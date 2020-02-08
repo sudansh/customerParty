@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion build_versions.target_sdk
+    dataBinding.enabled = true
+    defaultConfig {
+        applicationId "com.sudansh.party"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "BASE_URL", "\"https://s3.amazonaws.com/\""
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation deps.kotlin.stdlib
+    implementation deps.constraint_layout
+    implementation deps.material
+    implementation deps.appcompat
+    implementation deps.lifecycle.extensions
+
+    //Koin
+    implementation deps.koin
+
+    //Retrofit
+    implementation deps.retrofit
+
+    //RxJava - RxAndroid
+    implementation deps.rxjava.android
+    implementation deps.rxjava.java2
+
+    testImplementation deps.junit
+    androidTestImplementation deps.junit
+    androidTestImplementation deps.rules
+
+    //PowerMock & Mockito
+    testImplementation deps.powermock
+    testImplementation deps.lifecycle.test
+    androidTestImplementation deps.ext_junit
+    androidTestImplementation deps.espresso.core
+    androidTestImplementation deps.espresso.other
+    androidTestImplementation deps.runner
+
+}
